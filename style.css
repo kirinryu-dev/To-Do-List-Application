@@ -295,7 +295,6 @@ input[type="checkbox"]:not(.task-completed):checked::before {
 }
 
 /* my changes for the issue of responssiveness  */
-
 /* tablet screen viewport   */
 @media screen and (max-width:  900px) {
   @keyframes typing {
@@ -314,8 +313,6 @@ input[type="checkbox"]:not(.task-completed):checked::before {
   }
   
 }
-
-
 
 /* mobile screen viewport  */
 
