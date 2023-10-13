@@ -6,14 +6,10 @@
   box-sizing: border-box;
 }
 
-/* body {
-  position: relative;
-  width: 100%;
-  background-image: url('https://cdn.pixabay.com/photo/2022/07/31/08/03/to-do-7355222_1280.jpg'); 
-  
-  background: linear-gradient(to right, rgba(126, 64, 246, 1), rgba(80, 139, 252, 1));
-  font-family: 'Montserrat', sans-serif;
-} */
+html {
+  scroll-behavior: smooth;
+
+}
 
 body {
   font-family: "Young Serif";
@@ -39,6 +35,7 @@ body {
   width: 100%;
   flex: 1; /* Take remaining vertical space */
 }
+
 .text {
   font-size: 50px;
   color: rgb(255, 255, 255);
@@ -72,9 +69,6 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
-/* .container.main.mt-3{
-  padding-top: 10%;
-} */
 
 body.light-mode {
   background: linear-gradient(
@@ -108,39 +102,6 @@ body.dark-mode::before {
 
   ); /* Adjust the alpha (last) value to control darkness */
   z-index: -1;
-}
-
-/* Rest of your CSS styles remain unchanged */
-
-/* Rest of your CSS remains unchanged */
-
-/* body.light-mode {
-  background: linear-gradient(to right, rgba(126, 64, 246, 1), rgba(80, 139, 252, 1));
-} */
-
-/* body.dark-mode {
-  background: #232323;
-  color: #fff;
-} */
-
-/* .container-xl {
-  position: relative;
-  width: 100%;
-  height: 100%;
-} */
-
-.main {
-  position: relative;
-  width: 48rem;
-  height: 100%;
-  text-align: center;
-  padding: 4rem;
-  /* background: rgba(0, 0, 0, 0.2); */
-  border-radius: 2em;
-  backdrop-filter: blur(45px);
-  /* border: 10px solid rgba(0, 0, 0, 0.05); */
-  background-clip: padding-box;
-  /* box-shadow: 10px 10px 10px rgba(46, 54, 68, 0.03); */
 }
 
 .light-mode .main {
@@ -258,6 +219,7 @@ body.dark-mode::before {
   justify-content: space-evenly;
   
 }
+
 .main h2,
 h3 {
   width: 20rem;
@@ -265,29 +227,6 @@ h3 {
   margin: auto;
   border-bottom: 2px solid #ffffff;
   font-weight: 600;
-}
-
-@media screen and (max-width: 415px) {
-  .main_form .form_btn {
-    font-size: 1rem;
-    padding: 0.8rem;
-  }
-  .main {
-    width: 100%;
-    height: 380px;
-    padding: 1rem;
-  }
-  .main_form #item {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 960px) {
-  .main {
-    width: 100%;
-    height: 100%;
-    padding: 1rem;
-  }
 }
 
 .completed {
@@ -355,32 +294,200 @@ input[type="checkbox"]:not(.task-completed):checked::before {
   background: #fff;
 }
 
-/* input[type="checkbox"]:not(.task-completed):checked {
-    background: linear-gradient(to right, rgba(126, 64, 246, 1), rgba(80, 139, 252, 1));
-} */
+/* my changes for the issue of responssiveness  */
 
-@media screen and (max-width: 768px) {
-  .mode-toggle {
-    margin-left: 20px;
+/* tablet screen viewport   */
+@media screen and (max-width:  900px) {
+  @keyframes typing {
+    from{
+      width: 0;
+    }
+    to {
+      width: 100%;
+
+    }
   }
 
-  .form_btn {
-    font-size: 1rem;
-    padding: 0.8rem 2rem;
+  .container {
+    width: 800px;
+
+  }
+  
+}
+
+
+
+/* mobile screen viewport  */
+
+@media screen and (max-width: 500px) {
+
+
+  @keyframes typing {
+    from{
+      width: 0;
+    }
+    to {
+      width: 100%;
+
+    }
+  }
+
+  .container-xl {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+  }
+
+  .text {
+    font-size:20px;
+    color: rgb(255, 255, 255);
+    letter-spacing: 5px;
+    border-right: 5px solid rgb(0, 0, 0);
+
+  }
+
+  .text-center {
+    color: rgb(255, 255, 255);
+    font-size:  1.25rem;
+    margin-bottom: 20px;
+  }
+
+  .container-x {
+    background-color:  rgb(255, 255, 255);
+    display: flex;
+    max-width: 350px;
+
+  }
+
+  .main {
+    width: 350px;
+    display:flex ;
+    flex-direction: column;
+    border-radius: 1rem;
+    backdrop-filter: blur(45px);
+    background-clip: padding-box;
+    padding: 1em;
+    margin-left: 0;
+    margin-right: 0;
+
   }
 
   .main_form {
+    background-color: rgb(223, 223, 223);
+    position: relative;
+    padding: 1em;
+    display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    height:  18rem;
+    border-radius:  1rem !important;
+
   }
 
-  .main_form input[type="text"] {
+  .list-group-item {
+    font-size: 1.3rem;
+    margin-top: 0.4rem;
+    text-align: left;
+    color: #000000;
+    margin-right: 20px;
+    border-radius: 1rem !important;
+    word-break: break-all;
+    word-wrap: break-word;
+  }
+  
+  .list-group-item button {
+    margin: 0 0.2rem;
+    padding: 1em;
+    border-radius: 1rem;
+  }
+  
+  .main_form #item {
+    font-size: 1.3rem;
     width: 100%;
-    margin-bottom: 10px;
+    background: transparent;
+    border: none;
+    outline: none;
   }
 
-  .form_btn {
-    font-size: 1rem;
-    padding: 0.5rem 1rem;
-    width: auto;
+  .main_form .form_btn {
+    color: #fff;
+    letter-spacing: 0.11rem;
+    border: none;
+    background: linear-gradient(
+      to right,
+      rgba(1, 110, 225),
+      rgba(80, 139, 252, 1)
+    );
+    padding: 0.6rem 2rem;
+    border-radius: 5rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: opacity 0.3s;
+    border: 2px solid transparent;
   }
+  
+  .form_btn:hover,
+  .clear_btn:hover {
+    opacity: 0.9;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .clear_btn {
+    color: #fff;
+    letter-spacing: 0.11rem;
+    border: none;
+    background: linear-gradient(to right, rgb(225, 1, 1), rgb(236, 70, 70));
+    padding: 0.6rem 2rem;
+    border-radius: 5rem;
+    cursor: pointer;
+    transition: opacity 0.3s;
+    margin: 1rem 0;
+    display: none;
+  }
+
+  
+  .main_form #item::placeholder {
+    color: #ffffff;
+    background-color: #b9b9b9;
+    letter-spacing: 0.11rem;
+    font-size: 1.2rem;
+    padding: 1em;
+    border-radius: 5rem;
+    text-align: center;
+    border: none;
+    outline: none;
+  }
+  
+  
+  .list{
+    display: flex;
+    flex-direction:row;
+    justify-content: space-evenly;
+    
+  }
+
+  .main h2,
+  h3 {
+    width: 20rem;
+    margin: auto;
+    border-bottom: 1px solid #ffffff;
+    font-weight: 600;
+
+    
+  }
+
+  #addForm {
+    height: 300px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+
+    
+  }
+  
 }
